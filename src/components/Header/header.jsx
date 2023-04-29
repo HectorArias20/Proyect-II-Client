@@ -13,6 +13,16 @@ function Header(props) {
     
     let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('TokenUser')));
 
+    useEffect(() => {
+        if (loggedUser) {
+
+        } else {
+            //***Redirect to login***
+            navigate("/")
+        }
+
+    }, []);
+
 
     const Cerrar = () => {
         sessionStorage.clear();
